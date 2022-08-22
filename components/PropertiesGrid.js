@@ -7,7 +7,7 @@ export default function PropertiesGrid({ filteredProperties }) {
     <>
       <h2>OUR PROPERTIES:</h2>
       <div className="grid">
-        {filteredProperties.data.map((item) => {
+        {filteredProperties.data.map((item, idx) => {
           const pic = item.attributes.profilepic.data
             ? item.attributes.profilepic.data.attributes.url
             : "/no-picture";
@@ -17,7 +17,7 @@ export default function PropertiesGrid({ filteredProperties }) {
 
           return (
             <PropertyCard
-              key={item.id}
+              key={idx}
               location={loc}
               attributes={item.attributes}
               profilepic={pic}

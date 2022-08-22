@@ -5,15 +5,12 @@ import PropertiesGrid from "../components/PropertiesGrid";
 export default function Home({ locations, allProperties }) {
   const [filteredProperties, setFilteredProperties] = useState(allProperties);
   // const [currentFilter, setCurrentFilter] = useState({});
-  const str = filteredProperties.data.reduce(
-    (sum, value) => value.id.toString() + "," + sum
-  );
-  console.log(str);
 
   const check = (f) => {
     setFilteredProperties(f);
     console.log("check:", filteredProperties);
     console.log("f", f);
+    console.log("length", filteredProperties.data.length);
   };
   // useEffect(() => {
   //   console.log(
@@ -60,7 +57,7 @@ export default function Home({ locations, allProperties }) {
           allProperties={allProperties}
           onFilterChange={onFilterChange}
         />
-        <PropertiesGrid key={str} filteredProperties={filteredProperties} />
+        <PropertiesGrid filteredProperties={filteredProperties} />
       </div>
     </>
   );
