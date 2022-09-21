@@ -1,4 +1,4 @@
-export default function FilterForm({ locations, update, allProperties }) {
+export default function FilterForm({ locations, onFilterChange }) {
   const testObj = {
     data: [
       {
@@ -499,11 +499,8 @@ export default function FilterForm({ locations, update, allProperties }) {
   };
 
   const handleChange = (e) => {
-    const filter = allProperties;
-    filter.data = filter.data.filter(
-      (item) => item.attributes.location.data.attributes.Area === e.target.value
-    );
-    update(filter);
+    const obj = { id: e.target.id, value: e.target.value };
+    onFilterChange(obj);
   };
   return (
     <div className="form-container">
@@ -531,6 +528,7 @@ export default function FilterForm({ locations, update, allProperties }) {
           name="bedrooms"
           maxLength="2"
           placeholder="Bedrooms"
+          onChange={handleChange}
         />
         <label htmlFor="occupation"></label>
         <input
@@ -539,15 +537,8 @@ export default function FilterForm({ locations, update, allProperties }) {
           name="occupation"
           maxLength="2"
           placeholder="Occupation"
+          onChange={handleChange}
         />
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            return update(testObj);
-          }}
-        >
-          Search
-        </button>
       </form>
     </div>
   );

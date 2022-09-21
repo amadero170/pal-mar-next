@@ -2,23 +2,12 @@ import Image from "next/image";
 import FilterForm from "./FilterForm";
 import ImageSlider from "./ImageSlider";
 
-export default function HomeHeader({
-  slideArray,
-  locations,
-  update,
-  filteredProperties,
-  allProperties,
-}) {
+export default function HomeHeader({ slideArray, locations, onFilterChange }) {
   return (
     <div className="header-container">
       <div className="header-image-container">
         <ImageSlider slides={slideArray} />
-        <FilterForm
-          locations={locations}
-          update={update}
-          filteredProperties={filteredProperties}
-          allProperties={allProperties}
-        />
+        <FilterForm locations={locations} onFilterChange={onFilterChange} />
       </div>
 
       <div className="header-logo-container">

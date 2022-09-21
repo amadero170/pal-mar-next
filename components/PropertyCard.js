@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
+import Router, { useRouter } from "next/router";
 
 export default function PropertyCard({ attributes, location }) {
   const [currentId, setCurrentId] = useState(0);
@@ -15,9 +16,11 @@ export default function PropertyCard({ attributes, location }) {
       : currentId--;
     setCurrentId(currentId);
   };
-
+  const handleRoute = () => {
+    Router.push(`/${attributes.slug}`);
+  };
   return (
-    <div className="card">
+    <div className="card" onClick={handleRoute}>
       <div className="card-img-container">
         <span
           className="material-symbols-outlined leftButton"

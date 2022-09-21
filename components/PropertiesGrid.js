@@ -1,13 +1,11 @@
 import PropertyCard from "./PropertyCard";
 
 export default function PropertiesGrid({ filteredProperties }) {
-  console.log("from propgrid:", filteredProperties);
-
   return (
     <>
       <h2>OUR PROPERTIES:</h2>
       <div className="grid">
-        {filteredProperties.data.map((item, idx) => {
+        {filteredProperties.map((item, idx) => {
           const pic = item.attributes.profilepic.data
             ? item.attributes.profilepic.data.attributes.url
             : "/no-picture";
