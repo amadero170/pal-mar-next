@@ -2,6 +2,7 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import MapComponent from "../components/MapComponent";
+import ContactForm from "../components/ContactForm";
 
 export default function Property({ property }) {
   const attributes = property[0].attributes;
@@ -104,7 +105,10 @@ export default function Property({ property }) {
           PDF file
         </Link>
       </div>
-      <MapComponent />
+      <div className="map-form-section">
+        <MapComponent />
+        <ContactForm />
+      </div>
     </>
   );
 }

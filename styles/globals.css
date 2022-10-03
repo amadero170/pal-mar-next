@@ -330,3 +330,35 @@ h3 {
   text-align: center;
   margin: 3%;
 }
+
+.map-form-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 45%));
+  grid-column-gap: 5px;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 2% 0;
+}
+.contact-form-wrapper {
+  border: 1px solid black;
+}
+
+.flex {
+  display: flex;
+}
+form {
+  display: flex;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}
+input {
+  width: 80%;
+}
+input:focus {
+  background-color: var(--light-pink);
+}

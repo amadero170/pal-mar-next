@@ -7,14 +7,14 @@ const containerStyle = {
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523,
+  lat: 20.761696111727918,
+  lng: -105.49012162345271,
 };
 
 function MyComponent() {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyCbMlffM_EbcJc8bLWvbFo6GafgKBgvamM",
+    googleMapsApiKey: GOOGLE_MAPS_API_KEY,
   });
 
   const [map, setMap] = useState(null);
@@ -33,7 +33,7 @@ function MyComponent() {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={15}
+      zoom={18}
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
